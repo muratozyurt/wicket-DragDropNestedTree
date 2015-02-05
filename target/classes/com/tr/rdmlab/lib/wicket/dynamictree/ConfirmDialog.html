@@ -1,0 +1,25 @@
+<wicket:panel xmlns:wicket="http://wicket.apache.org" xmlns:lang="tr-TR"> 
+
+<meta charset="UTF-8"  lang="tr-TR"/>
+
+
+<div >
+    <div class="modal-dialog">
+        <div wicket:id="content"   class="modal-content">
+           <div class="modal-header">
+                <span wicket:id ="title"></span>
+            </div>
+            
+            <div class="modal-body">
+                <span wicket:id ="message"></span>
+            </div>
+            
+            <div class="modal-footer">
+                <button wicket:id="cancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a wicket:id="confirm" href="#" class="btn btn-danger danger">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</wicket:panel>
