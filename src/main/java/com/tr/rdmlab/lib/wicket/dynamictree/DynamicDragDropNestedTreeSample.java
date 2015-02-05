@@ -3,6 +3,8 @@ package com.tr.rdmlab.lib.wicket.dynamictree;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.Model;
 
+import com.tr.rdmlab.lib.wicket.dynamictree.core.DynamicDragDropNestedTree;
+
 public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  {
 
 	

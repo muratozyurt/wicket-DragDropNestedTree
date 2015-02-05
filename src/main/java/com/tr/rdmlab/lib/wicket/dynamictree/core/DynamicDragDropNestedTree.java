@@ -1,4 +1,4 @@
-package com.tr.rdmlab.lib.wicket.dynamictree;
+package com.tr.rdmlab.lib.wicket.dynamictree.core;
 
 import java.util.ArrayList;
 import java.util.Iterator;
