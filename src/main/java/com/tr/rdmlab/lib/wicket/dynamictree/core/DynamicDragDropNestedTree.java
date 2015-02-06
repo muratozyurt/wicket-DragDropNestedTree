@@ -74,8 +74,10 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 	CollapsePanelDraggable draggable; 
 	CollapsePanelDroppable dropppable; 
 	
+	static String CONTENT_PANEL_ID = "contentPanel";
+	
 	WebMarkupContainer header = new WebMarkupContainer("header"); 
-	WebMarkupContainer contentPanel = new WebMarkupContainer("contentPanel"); 
+	protected WebMarkupContainer contentPanel = new WebMarkupContainer(CONTENT_PANEL_ID);
 	
 	
 	// root may change due to drag and drop.  
@@ -85,12 +87,9 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		while(rootPanel.parentPanel != null)
 		{ 			
 			rootPanel = rootPanel.parentPanel;			
-		}
-		
+		}		
 		return rootPanel;
 	}
-	
-  
 	
 	 class CollapsePanelDroppable extends Droppable<Void> {
 		 
@@ -128,17 +127,14 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 					ArrayList<DynamicDragDropNestedTree> ancestors = getAncestors(); 
 					 
 					for(DynamicDragDropNestedTree ancestor: ancestors)
-					{
-						 
-						
+					{	
 						if( dragged.panel == ancestor)
 						{
 							// cannot move to a child unit
 							feedbackMessage (cannotMoveToChild , FeedbackMessage.ERROR,target);
 							return;
 						} 
-					}
-					 
+					}					 
 					
 					addDraggedChildObject(dragged.panel);
 					
@@ -164,8 +160,7 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 	}
 	
 	abstract protected void addDraggedChildObject(DynamicDragDropNestedTree draggedChild);
-	 
-	 abstract protected void feedbackMessage(String message, int type, AjaxRequestTarget target);
+	abstract protected void feedbackMessage(String message, int type, AjaxRequestTarget target);
 	 
 	class CollapsePanelDraggable extends Draggable<Void>{
  
@@ -173,10 +168,8 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		DynamicDragDropNestedTree panel = DynamicDragDropNestedTree.this; 
 		
 		public CollapsePanelDraggable(String id) {
-			super(id);
-			
-			this.setAxis(Axis.Y);
-			
+			super(id);			
+			this.setAxis(Axis.Y);			
 			if(getRootCollapsePanel() == DynamicDragDropNestedTree.this)
 			{
 				//setAxis(Axis.X);
@@ -184,10 +177,8 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 				setContainment(this);
 				nameLabel.setEnabled(false);
 			}
-			//setContainment(root);
-			
-			setRevert(true);
-			 
+			//setContainment(root);			
+			setRevert(true);			 
 		}  
 	}
 
