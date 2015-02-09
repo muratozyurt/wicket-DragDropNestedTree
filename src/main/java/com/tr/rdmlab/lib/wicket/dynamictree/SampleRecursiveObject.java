@@ -17,6 +17,7 @@ public class SampleRecursiveObject  implements Serializable{
 	List<SampleRecursiveObject> childObjects = new ArrayList<SampleRecursiveObject>();
 	 
 	boolean panelExpanded;
+	boolean contentExpanded;
 	
 	public SampleRecursiveObject() {
 	 
@@ -66,6 +67,12 @@ public class SampleRecursiveObject  implements Serializable{
 	}
 	
 	 
+	public boolean isContentExpanded() {
+		return contentExpanded;
+	}
+	public void setContentExpanded(boolean contentExpanded) {
+		this.contentExpanded = contentExpanded;
+	}
 	public String getName() {
 		return name;
 	}

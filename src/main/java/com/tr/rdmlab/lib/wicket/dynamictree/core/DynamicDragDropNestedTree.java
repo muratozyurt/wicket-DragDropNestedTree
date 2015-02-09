@@ -212,6 +212,7 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 	}
 	
 	abstract protected void toggleChildrenExtension(boolean childrenVisible);
+	abstract protected void toggleContentExtension(boolean contentVisible);
 	
 	AjaxLink<String> add=new AjaxLink<String>("add"){
  
@@ -236,15 +237,20 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		@Override
 		public void onClick(AjaxRequestTarget target) {
 
-			contentPanel.setVisible(!contentPanel.isVisible());
-			toggleContentLabel = contentPanel.isVisible() ? close : open;
+			toggleContentPanel(!contentPanel.isVisible());
+			 
 			target.add(contentPanel); 
 			target.add(this);
 		} 
 		
 	}; 
 	 
-	
+	protected void toggleContentPanel(boolean contentVisible)
+	{
+		contentPanel.setVisible(contentVisible);
+		toggleContentLabel = contentVisible ? close : open;
+		toggleContentExtension(contentVisible);
+	}
 	AjaxLink<String> deleteObject=new AjaxLink<String>("delete"){
 	 
 		private static final long serialVersionUID = 1L;
@@ -333,14 +339,12 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		add(dropppable);
 		//add(tree);
 	 
-		
-		
-		
+				
 		setOutputMarkupId(true); 
 		contentPanel.setVisible(false);
 		//contentPanel.setOutputMarkupId(true);
 		contentPanel.setOutputMarkupPlaceholderTag(true);
-		add(contentPanel);
+		header.add(contentPanel);
 		
 		add(childPanels); 
 	} 

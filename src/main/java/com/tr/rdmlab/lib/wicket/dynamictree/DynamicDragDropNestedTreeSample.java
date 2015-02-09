@@ -26,6 +26,7 @@ public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  
 
 	private void initContentPanel() {
 		
+		toggleContentPanel(sampleRecursiveObject.isContentExpanded());
 		contentPanel.add(new Label("childMarkupLabel","This is in the child markup."));
 		
 	}
@@ -65,6 +66,13 @@ public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  
 		sampleRecursiveObject.setPanelExpanded(childrenVisible);
 		
 	}
+	
+	@Override
+	protected void toggleContentExtension(boolean contentVisible) {
+		sampleRecursiveObject.setContentExpanded(contentVisible);
+		
+	}
+	
 
 	@Override
 	protected void newChild() {
@@ -143,6 +151,8 @@ public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  
 				confirm.show(target);  
 		
 	}
+
+	
 	
 	
 
