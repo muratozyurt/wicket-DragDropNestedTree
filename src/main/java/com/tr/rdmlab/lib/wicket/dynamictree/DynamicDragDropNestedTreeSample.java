@@ -1,6 +1,7 @@
 package com.tr.rdmlab.lib.wicket.dynamictree;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 
 import com.tr.rdmlab.lib.wicket.dynamictree.core.DynamicDragDropNestedTree;
@@ -19,6 +20,14 @@ public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  
 		getNameFromObject();
 		updateChildren();
 		 
+		initContentPanel();
+		 
+	}
+
+	private void initContentPanel() {
+		
+		contentPanel.add(new Label("childMarkupLabel","This is in the child markup."));
+		
 	}
 
 
@@ -27,7 +36,7 @@ public class DynamicDragDropNestedTreeSample extends DynamicDragDropNestedTree  
 		 * You can add your own language version here
 		 */
 		// TURKISH: 
-//		newItem = "Yeni Birim";
+//		newItem = "Yeni Kayıt";
 //		open = "Aç";
 //		close = "Kapat";
 //		newChild = "Yeni";
