@@ -12,7 +12,7 @@
 				<a wicket:id="toggleChildPanel" class="btn">
 				<!-- <label wicket:id="toggleTextLabel"></label>  -->
 				<wicket:container wicket:id="toggleChildrenLabel" />
-				</a> <span wicket:id="nameField"></span> 
+				</a> <span wicket:id="nameField"  ></span> 
 				<div class="btn-group pull-right">
 					<a wicket:id="delete" class="btn btn-mini" href="#"> <wicket:container wicket:id="deleteLabel"  />  </a> 					
 					<a wicket:id="open" class="btn btn-mini" href="#"> <wicket:container wicket:id="toggleContentLabel" /> </a>					
@@ -20,14 +20,17 @@
 				</div>
 			</div>
 			
-			<div wicket:id="contentPanel" style="width:700px; align:right;">
-			<wicket:child />
 			
-		</div>
 			</div>
-			  
+			   
+		
 		 
 		</div>
+		
+			<div wicket:id="contentPanel" style=" width:autopx; align:right;  padding: 1px; margin: 0px 0px 0px 0px; border: 1px solid;  border-radius: 3px; border-color:#aaaaaa; background-color: rgba(100,100,120,0.3); "> 
+	  		<wicket:child />
+			
+			</div>
 		</div> 
 		
 		

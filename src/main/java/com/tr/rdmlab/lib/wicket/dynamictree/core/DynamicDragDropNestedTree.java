@@ -344,7 +344,7 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		contentPanel.setVisible(false);
 		//contentPanel.setOutputMarkupId(true);
 		contentPanel.setOutputMarkupPlaceholderTag(true);
-		header.add(contentPanel);
+		dropppable.add(contentPanel);
 		
 		add(childPanels); 
 	} 
