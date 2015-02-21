@@ -354,11 +354,11 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		children.clear();
 		updateChildList();
 		
-		
 		toggleChildPanel.setEnabled(children.size()>0); 
 		//toggleChildPanel.addOrReplace(children.size()<=0 ? toggleTextLabelNoChild : childPanels.isVisible() ? toggleTextLabelVisible : toggleTextLabelHidden);
 	 		
-		toggleChildrenLabel = children.size()<=0 ? " " : childPanels.isVisible() ? "-" : "+";
+		toggleChildrenLabel = children.size()<=0 ? "." : childPanels.isVisible() ? "-" : "+";
+		//toggleChildPanel.setVisible(children.size()>0);
 		deleteObject.setVisible(canDelete());
 		
 	}
