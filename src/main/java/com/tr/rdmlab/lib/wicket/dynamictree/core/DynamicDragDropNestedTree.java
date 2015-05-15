@@ -11,9 +11,12 @@ import org.apache.wicket.extensions.ajax.markup.html.AjaxEditableLabel;
 import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.list.ListItem;
+import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.RefreshingView;
+import org.apache.wicket.markup.repeater.RepeatingView;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.PropertyModel;
 
@@ -76,7 +79,10 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 	
 	static String CONTENT_PANEL_ID = "contentPanel";
 	
-	WebMarkupContainer header = new WebMarkupContainer("header"); 
+	protected WebMarkupContainer header = new WebMarkupContainer("header"); 
+	
+	protected RepeatingView buttonsExt = new RepeatingView("buttonsExt"); 
+	 
 	protected WebMarkupContainer contentPanel = new WebMarkupContainer(CONTENT_PANEL_ID);
 	
 	
@@ -331,6 +337,8 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 		header.add(add); 
 		
 		header.add(openContent);
+		
+		header.add(buttonsExt);
 		draggable.add(header);
 		openContent.setVisible(level>0);
 		

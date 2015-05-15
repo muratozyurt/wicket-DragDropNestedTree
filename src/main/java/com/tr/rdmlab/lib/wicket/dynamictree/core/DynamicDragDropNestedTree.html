@@ -6,19 +6,23 @@
 		<div wicket:id="droparea">
 			<div wicket:id="dragarea"
 				class="ui-widget-content ui-corner-al ui-state-default">
+				
 				<div wicket:id="header" class="treeHeader">
 					<div class="btn-toolbar">
 						<a wicket:id="toggleChildPanel" class="btn btn-default btn-sm"> <!-- <label wicket:id="toggleTextLabel"></label>  -->
 							<wicket:container wicket:id="toggleChildrenLabel" />
 						</a> <span wicket:id="nameField"></span>
 						<div class="btn-group-mini pull-right">
-							<a wicket:id="delete" class="btn btn-danger btn-sm" href="#"> <wicket:container
-									wicket:id="deleteLabel" />
+						
+							<a wicket:id="delete" class="btn btn-danger btn-sm" href="#"> 
+							<wicket:container wicket:id="deleteLabel" />
 							</a> <a wicket:id="open" class="btn btn-info btn-sm" href="#"> <wicket:container
 									wicket:id="toggleContentLabel" />
 							</a> <a wicket:id="add" class="btn btn-success btn-sm" href="#"> <wicket:container
 									wicket:id="newChildLabel" />
-							</a>
+							</a> 
+    <span wicket:id="buttonsExt" class ="btn  btn-sm"><wicket:container wicket:id="buttonLabel"/> </span>
+ 					 
 						</div>
 					</div>
 				</div>
