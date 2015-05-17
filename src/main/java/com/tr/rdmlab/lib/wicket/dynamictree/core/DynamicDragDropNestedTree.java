@@ -73,7 +73,7 @@ public abstract class DynamicDragDropNestedTree   extends Panel {
 	
 	int level= 0;
 			
-	protected DynamicDragDropNestedTree parentPanel;
+	public DynamicDragDropNestedTree parentPanel;
 	CollapsePanelDraggable draggable; 
 	CollapsePanelDroppable dropppable; 
 	
