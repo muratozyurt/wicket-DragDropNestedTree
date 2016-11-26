@@ -16,7 +16,7 @@ public abstract  class ConfirmDialog extends ModalWindow {
 	          setAutoSize(true);
 	          setMinimalWidth(250);
 	         this.page = page;
-	         WebMarkupContainer content = new WebMarkupContainer(getContentId());
+	         WebMarkupContainer content = new WebMarkupContainer("content");
 	         setContent(content);
 	         content.add(new Label("title", title));
 	         content.add(new Label("message", message)); 
